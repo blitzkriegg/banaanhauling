@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 09, 2013 at 05:30 PM
+-- Generation Time: Dec 15, 2013 at 08:42 AM
 -- Server version: 5.6.11
 -- PHP Version: 5.5.1
 
@@ -46,15 +46,24 @@ CREATE TABLE IF NOT EXISTS `customer` (
   `cust_id` int(5) unsigned zerofill NOT NULL AUTO_INCREMENT,
   `cust_email` varchar(40) NOT NULL,
   `cust_password` varchar(20) NOT NULL,
-  `cust_name` varchar(32) NOT NULL,
+  `cust_fname` varchar(32) NOT NULL,
+  `cust_mname` varchar(16) NOT NULL,
+  `cust_lname` varchar(16) NOT NULL,
   `cust_address` varchar(60) NOT NULL,
-  `cust_contact_no` int(11) NOT NULL,
+  `cust_contact_no` int(11) DEFAULT NULL,
   PRIMARY KEY (`cust_id`),
   KEY `cust_id` (`cust_id`),
   KEY `cust_id_2` (`cust_id`),
   KEY `cust_id_3` (`cust_id`),
   KEY `cust_id_4` (`cust_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+
+--
+-- Dumping data for table `customer`
+--
+
+INSERT INTO `customer` (`cust_id`, `cust_email`, `cust_password`, `cust_fname`, `cust_mname`, `cust_lname`, `cust_address`, `cust_contact_no`) VALUES
+(00004, 'a@a.com', 'a', 'a', '', '', '', NULL);
 
 -- --------------------------------------------------------
 
@@ -110,6 +119,7 @@ CREATE TABLE IF NOT EXISTS `driver` (
 
 CREATE TABLE IF NOT EXISTS `employee` (
   `emp_id` int(3) unsigned zerofill NOT NULL AUTO_INCREMENT,
+  `emp_uid` varchar(16) NOT NULL,
   `emp_password` varchar(24) NOT NULL,
   `emp_name` varchar(32) NOT NULL,
   `emp_birthday` date NOT NULL,
@@ -117,7 +127,14 @@ CREATE TABLE IF NOT EXISTS `employee` (
   `emp_time_out` time NOT NULL,
   `emp_type` enum('d') CHARACTER SET utf32 COLLATE utf32_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`emp_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `employee`
+--
+
+INSERT INTO `employee` (`emp_id`, `emp_uid`, `emp_password`, `emp_name`, `emp_birthday`, `emp_time_in`, `emp_time_out`, `emp_type`) VALUES
+(001, 'admin', '1234', 'admin', '0000-00-00', '00:00:00', '00:00:00', NULL);
 
 -- --------------------------------------------------------
 

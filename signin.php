@@ -1,8 +1,9 @@
 <html>
 	<head>
-		<script src="jquery.js" type="text/javascript"></script>
- 		<script src="bootstrap.js"></script>
-		<link type="text/css" rel="stylesheet" href="bootstrap.css">
+		<script src="js/jquery.js" type="text/javascript"></script>
+        <script src="js/bootstrap.js"></script>
+        <link type="text/css" rel="stylesheet" href="css/bootstrap.css">
+        <link href="css/sticky-footer.css" rel="stylesheet">
 		<style>
 			.center {
      			float: none;
@@ -13,15 +14,15 @@
 		</style>
 	</head>
 
-	<body background="1.jpg">
-		<div class="navbar navbar-inverse navbar-static-top">
-            <div class="navbar-inner">
-             	<a class="brand" href="banan.php">Banaan Hauling Services</a>
-             	<ul class="nav">
-       	 			<li><a href="banan.php">Home</a></li>
+	<body background="">
+        <div class="navbar navbar-inverse navbar-static-top">
+            <div class="container">
+                <a class="navbar-brand" href="index.php">Banaan Hauling Services</a>
+                <ul class="nav navbar-nav">
+                    <li><a href="index.php">Home</a></li>
                     <li><a href="services.php">Services</a></li>
                     <li><a href="#">Contact us</a></li>
-   				</ul>
+                </ul>
         		<ul class="nav pull-right">
                     <li class="dropdown">
                         <a href="" class="dropdown-toggle" data-toggle="dropdown">
@@ -59,6 +60,10 @@
             <button class="btn btn-link" id="cost">Customer</button></span>|
             <button class="btn btn-link" id="emp">Employee</button></span>
         </div>
+        <hr>
+        <footer style="height:40px">
+            <p style="text-align: center">Copyright something blabla</p>
+        </footer>
 		<script type="text/javascript">
             $(window).load(function(){
 
