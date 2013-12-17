@@ -48,6 +48,8 @@ if(isset($_POST['']))
                      ?>
             </div>
         </div>
+
+       	<div>
 		<div class="center well span11 alert alert-info" style="width:745px;height:420px" id="wrap">
             <form name="register" id="register" action="register.php" method="post">
 				<h3>Personal Information</h3>
@@ -80,10 +82,15 @@ if(isset($_POST['']))
 				<span class="position"><button class="btn btn-primary">Submit</button></span>
 				</form>
         </div>
+        </div>
+
+
         <hr>
-        <footer style="height:40px">
-            <p style="text-align: center">Copyright something blabla</p>
-        </footer>
+        <div id="footer">
+            <div class="container">
+                <p class="text-muted credit">Banan hauling prototype website</p>
+            </div>
+        </div>
 	</body>
 	<script type="text/javascript">
 		function checkPass()

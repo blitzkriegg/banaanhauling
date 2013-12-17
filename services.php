@@ -4,14 +4,6 @@
         <script src="js/bootstrap.js"></script>
         <link type="text/css" rel="stylesheet" href="css/bootstrap.css">
         <link href="css/sticky-footer.css" rel="stylesheet">
-		<style>
-			.center {
-     			float: none;
-     			margin-left: auto;
-     			margin-right: auto;
-     			margin-top: 100;
-     		}
-		</style>
 	</head>
 
 	<body background="">
@@ -37,30 +29,33 @@
                 </ul>
             </div>
         </div>
-		<div class="wrap">
-		<div class="center wellspan10 alert alert-info" style="height:220px;width:710px" id="servicessView">
+
+		<div id="wrap">
+		<div class="container text-center" style="height:220px;width:710px" id="servicessView">
             <h3>Order</h3>
 			<form name="services" id="services">
-                	<span class="position">Item<span style="margin-left:60px"></span>
+                	<span class="position">Item<span style="margin-left:75px"></span>
                     <input type="text" class="span8" id="request">
-                    <br>
-                    <span class="position">Weight<span style="margin-left:43px"></span>
+                    <br><br>
+                    <span class="position">Weight<span style="margin-left:58px"></span>
                     <input type="text" class="span8">
-                    <br>
-                	<span class="position">Pick-up point<span style="margin-left:5px"></span>
+                    <br><br>
+                	<span class="position">Pick-up point<span style="margin-left:20px"></span>
                     <input type="text" class="span8">
-                    <br>
-                    <span class="position">Destination<span style="margin-left:16px"></span>
+                    <br><br>
+                    <span class="position">Destination<span style="margin-left:31px"></span>
                     <input type="text" class="span8">
-                    <br>
+                    <br><br>
                     <span class="position"><button class="btn btn-primary">Submit</button></span>
-               
             </form>
         </div>
         </div>
         <hr>
-        <footer style="height:40px">
-            <p style="text-align: center">Copyright something blabla</p>
-        </footer>
+        
+        <div id="footer">
+            <div class="container">
+                <p class="text-muted credit">Banan hauling prototype website</p>
+            </div>
+        </div>
 	</body>
 </html>
