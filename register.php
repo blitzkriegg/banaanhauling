@@ -1,7 +1,26 @@
 <?php
 session_start();
-require('db_con.php');
-if(isset($_POST['']))
+require('banan_dbcon.php');
+    if(isset($_POST['fname']) && isset($_POST['mname']) && isset($_POST['lname']) && isset($_POST['addr']) && isset($_POST['email']) && isset($_POST['password']))
+    {
+    	$check = "select cust_id,cust_email from customer where
+		cust_email = '{$_POST['email']}'";
+		$r = mysql_query($check);
+		if($r){
+	        $q = "insert into customer (cust_email,cust_password,cust_fname,cust_mname, cust_lname, cust_address) values"
+	    	."('{$_POST['email']}','{".md5($_POST['password'])."}',"
+	    	."'{$_POST['fname']}','{$_POST['mname']}',"
+			."'{$_POST['lname']}','{$_POST['addr']}')";	
+			$res = mysql_query($q) or die(mysql_error());
+
+			if($res){
+				//echo "<form action='customerLogin.php' method='post'>
+				//			<input type='hidden' name='Email' value='{$_POST['email']}' />
+				//		<input type='hidden' name='Password' value='{$_POST['password']}' />
+				//	  <\form>";
+			}
+		}
+	}
 ?>
 <html>
 	<head>
@@ -48,8 +67,6 @@ if(isset($_POST['']))
                      ?>
             </div>
         </div>
-
-       	<div>
 		<div class="center well span11 alert alert-info" style="width:745px;height:420px" id="wrap">
             <form name="register" id="register" action="register.php" method="post">
 				<h3>Personal Information</h3>
@@ -82,15 +99,10 @@ if(isset($_POST['']))
 				<span class="position"><button class="btn btn-primary">Submit</button></span>
 				</form>
         </div>
-        </div>
-
-
         <hr>
-        <div id="footer">
-            <div class="container">
-                <p class="text-muted credit">Banan hauling prototype website</p>
-            </div>
-        </div>
+        <footer style="height:40px">
+            <p style="text-align: center">Copyright something blabla</p>
+        </footer>
 	</body>
 	<script type="text/javascript">
 		function checkPass()

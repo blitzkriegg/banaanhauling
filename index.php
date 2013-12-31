@@ -61,7 +61,6 @@ session_start();
 
        <!-- Carousel
     ================================================== -->
-        <div class="wrap">
         <div id="myCarousel" class="carousel slide" style="top: -21px;" data-ride="carousel">
             <!-- Indicators -->
             <ol class="carousel-indicators">
@@ -126,13 +125,10 @@ session_start();
         </div> <!-- /container -->   
 
         <hr>
+        <footer style="height:40px">
+            <p style="text-align: center">Copyright something blabla</p>
+        </footer>
 
-        <div id="footer">
-            <div class="container">
-                <p class="text-muted credit">Banan hauling prototype website</p>
-            </div>
-        </div>
-        </div>
 
         <script type="text/javascript">
             $(window).load(function(){

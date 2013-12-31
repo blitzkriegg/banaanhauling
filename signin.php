@@ -1,9 +1,23 @@
+<?php
+session_start();
+if(isset($_SESSION['UserID']) && isset($_SESSION['Username'])){
+    header("Location:index.php");
+}
+?>
 <html>
 	<head>
 		<script src="js/jquery.js" type="text/javascript"></script>
         <script src="js/bootstrap.js"></script>
         <link type="text/css" rel="stylesheet" href="css/bootstrap.css">
         <link href="css/sticky-footer.css" rel="stylesheet">
+		<style>
+			.center {
+     			float: none;
+     			margin-left: auto;
+     			margin-right: auto;
+     			margin-top: 100;
+     		}
+		</style>
 	</head>
 
 	<body background="">
@@ -29,42 +43,33 @@
                 </ul>
             </div>
         </div>
-
-        <div id="wrap">
-		<div class="container text-center"  id="signinViewCust">
-            <form class="form-inline" role="form" name="signincust" id="signincust">
-                email<input style="margin-left:50px" type="text" /> 
-                <br/><br>
-                Password<input style="margin-left:20px" type="password" /> 
-                <br><br>
-            	<input class="btn btn-primary" type="submit" name="login" id="login" value="Login">
+		<div class="center well span4 alert alert-info" style="height:90px; top:20%;" id="signinViewCust">
+            <form name="signincust" id="signincust" action="customerLogin.php" method="post">
+                email<input style="margin-left:28px" name="Email" type="text" style="padding-right:60px"/> <br/>
+                Password<input type="password" name="Password" /> 
+                <br>
+                <input class="btn btn-primary" type="submit" name="login" id="login" value="Login">
             </form>
         </div>
 
-        <div class="container text-center" style="height:90px; top:20%;" id="signinViewEmp">
-            <form class="form-horizontal" role="form" name="signinemp" id="signinemp">
-                ID<input style="margin-left:70px" type="text" /> 
-                <br/><br>
-                Password<input style="margin-left:20px" type="password" /> 
-                <br><br>
-            	<input class="btn btn-primary" type="submit" name="login" id="login" value="Login">
+        <div class="center well span4 alert alert-info" style="height:90px; top:20%;" id="signinViewEmp">
+            <form name="signinemp" id="signinemp" action="employeeLogin.php" method="post">
+                ID<span style="margin-left:48px"></span><input  name="Username" type="text" style="padding-right:60px"/> <br/>
+                Password<input type="password" name="Password"/> 
+                <br>
+                <input class="btn btn-primary" type="submit" name="login" id="login" value="Login">
             </form>
         </div>
 
-        <div class="container text-center" id="choose">
+        <div class="center well span3 text-center alert alert-info" id="choose">
             <h3>Sign in as</h3>
             <button class="btn btn-link" id="cost">Customer</button></span>|
             <button class="btn btn-link" id="emp">Employee</button></span>
         </div>
-        </div>
-
         <hr>
-        <div id="footer">
-            <div class="container">
-                <p class="text-muted credit">Banan hauling prototype website</p>
-            </div>
-        </div>
-
+        <footer style="height:40px">
+            <p style="text-align: center">Copyright something blabla</p>
+        </footer>
 		<script type="text/javascript">
             $(window).load(function(){
 

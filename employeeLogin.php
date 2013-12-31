@@ -1,8 +1,6 @@
 <?php
 session_start();
 require('db_con.php');
-	   echo "{$_POST['Username']}";
-	   echo "{$_POST['Password']}";
    if(isset($_POST['Username']) && isset($_POST['Password'])){
 
   		$query = "select emp_id, emp_uid, emp_name from employee where
