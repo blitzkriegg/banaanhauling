@@ -18,8 +18,6 @@ require('banan_dbcon.php');
 ?>
 <html>
 	<head>
-		<script src="js/jquery.js" type="text/javascript"></script>
-        <script src="js/bootstrap.js"></script>
         <link type="text/css" rel="stylesheet" href="css/bootstrap.css">
         <link href="css/sticky-footer.css" rel="stylesheet">
 		<style>
@@ -33,69 +31,80 @@ require('banan_dbcon.php');
 	</head>
 
 	<body background="">
-		<div class="navbar navbar-inverse navbar-static-top">
+  		<div class="navbar navbar-inverse navbar-fixed-top" >    <!--Header-->
             <div class="container">
-                <a class="navbar-brand" href="index.php">Banaan Hauling Services</a>
-                <ul class="nav navbar-nav">
-                    <li><a href="index.php">Home</a></li>
-                    <li><a href="services.php">Services</a></li>
-                    <li><a href="#">Contact us</a></li>
-                </ul>
-        		 <?php
-                        if(isset($_SESSION['UserID']) && isset($_SESSION['Username'])){
-                             echo "<ul class='nav pull-right'>
-                                        <li class='dropdown'>
-                                            <a href='#' class='dropdown-toggle' data-toggle='dropdown'>Welcome {$_SESSION['Username']}!
-                                                <span class='caret'></span>
-                                             </a>
-                                             <ul class='dropdown-menu' role='menu' aria-labelledby='dLabel'>
-                                                <li><a href='#'>Settings</a></li>
-                                                <li><a href='logout.php'>Logout</a></li>
-                                             </ul>
-                                        </li>
-                                  </ul>";                                           
-                         }
-                         else{
-                            echo "<ul class='nav pull-right'>
-                                        <li class='dropdown'>
-                                            <a href='#' class='dropdown-toggle' data-toggle='dropdown'>
-                                                Account
-                                                <span class='caret'></span>
-                                             </a>
-                                    <ul class='dropdown-menu' role='menu' aria-labelledby='dLabel'>
-                                        <li><a href='signin.php'>Sign in</a></li>
-                                        <li><a href='register.php'>Register</a></li>
-                                     </ul>
-                                        </li>
-                                  </ul>";
-                         }
-                     ?>
+				<div class="navbar-header">
+					<button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="index.php">Banaan Hauling Services</a>
+				</div>
+				<nav class="navbar-collapse collapse" role="navigation">
+					<ul class="nav navbar-nav">
+						<li><a href="index.php">Home</a></li>
+						<li><a href="services.php">Services</a></li>
+						<li><a href="#">Contact us</a></li>
+					</ul>
+					<ul class="nav navbar-nav navbar-right">
+						<?php
+							if(isset($_SESSION['UserID']) && isset($_SESSION['Username'])){
+								echo "
+										<li class='dropdown'>
+											<a href='#' class='dropdown-toggle' data-toggle='dropdown'>Welcome {$_SESSION['Username']}!
+												<span class='caret'></span>
+											</a>
+											<ul class='dropdown-menu' role='menu' aria-labelledby='dLabel'>
+												<li><a href='profile.php'>Profile</a></li>
+												<li><a href='#'>Settings</a></li>
+												<li><a href='logout.php'>Logout</a></li>
+											</ul>
+										</li>
+									  ";                                           
+							}
+							else{
+								echo "
+										<li><a href='register.php'>Register</a></li>
+										<li><a href='signin.php'>Sign In</a></li>						
+									 ";
+							}
+						?>
+					</ul>
+				</nav>
             </div>
         </div>
-		<div class="wrap">
-		<div class="center wellspan10 alert alert-info" style="height:220px;width:710px" id="servicessView">
-            <h3>Order</h3>
-			<form name="services" id="services" action="services.php" method="post">
-                	<span class="position">Item<span style="margin-left:60px"></span>
+
+  		<div class="wrap">  <!--Body-->
+            <div class="center wellspan10 alert alert-info" style="height:220px;width:710px" id="servicessView">
+                <h3>Order</h3>
+    		    <form name="services" id="services" action="services.php" method="post">
+                    <span class="position">Item<span style="margin-left:60px"></span>
                     <input type="text" class="span8" name="req_item">
                     <br>
                     <span class="position">Weight<span style="margin-left:43px"></span>
                     <input type="text" class="span8" name="req_weight">
                     <br>
-                	<span class="position">Pick-up point<span style="margin-left:5px"></span>
+                    <span class="position">Pick-up point<span style="margin-left:5px"></span>
                     <input type="text" class="span8" name="req_pick_up">
                     <br>
                     <span class="position">Destination<span style="margin-left:16px"></span>
                     <input type="text" class="span8" name="req_drop_off">
                     <br>
-                    <span class="position"><button class="btn btn-primary">Submit</button></span>
-               
-            </form>
+                    <span class="position"><button class="btn btn-primary">Submit</button></span>   
+                </form>
+            </div>
         </div>
-        </div>
+
         <hr>
-        <footer style="height:40px">
-            <p style="text-align: center">Copyright something blabla</p>
-        </footer>
+        <div id="footer">
+            <div class="container">
+                <p class="text-center text-muted credit">Banan hauling prototype website</p>
+            </div>
+        </div>
+		
+		<script src="js/jquery.js" type="text/javascript"></script>
+        <script src="js/bootstrap.js"></script>
 	</body>
 </html>
