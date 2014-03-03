@@ -83,73 +83,75 @@ require('banan_dbcon.php');
         </div>
 
         <div class="wrap">	<!--Body-->
-			<div class="center well span11 alert alert-info" style="width:745px;height:420px" id="wrap">
-            	<form name="register" id="register" action="register.php" method="post">
+			<div class="container center">
+            	<form class="form-horizontal" name="register" id="register" action="register.php" method="post">
 					<h3>Personal Information</h3>
-					FirstName<span style="margin-left:48px">
-					<input type="text" name="fname" class="span6">
-					<br>
+					FirstName<br>
+					<input type="text" name="fname" class="col-sm-6" required>
+					<br><br>
 
-					MiddleName<span style="margin-left:35px">
-					<input type="text" name="mname" class="span6">
-					<br>
+					MiddleName<br>
+					<input type="text" name="mname" class="col-sm-6" required>
+					<br><br>
 
-					LastName<span style="margin-left:49px">
-					<input type="text" name="lname" class="span6">
-					<br>
+					LastName<br>
+					<input type="text" name="lname" class="col-sm-6" required>
+					<br><br>
 
-					Birthday<span style="margin-left:60px">
-					<input type="text" name="bday" class="span6">
-					<br>
+					Birthday<br>
+					<input type="text" name="bday" class="col-sm-6" required>
+					<br><br>
 					
-					Address<span style="margin-left:60px">
-					<input type="text" name="addr"class="span6">
+					Address<br>
+					<input type="text" name="addr"class="col-sm-12" required>
+					<br><br>
+					
 					<h3 class="subindex">Account Information</h3>
 					
-					Email<span style="margin-left:79px">
-					<input type="text" name="email" class="span6">
-					<br>
+					Email<br>
+					<input type="text" name="email" class="col-sm-6" required>
+					<br><br>
 				
-					Password<span style="margin-left:53px">
-					<input type="password" name="password" id="pass1" class="span6">
-					<br>
+					Password<br>
+					<input type="password" name="password" id="pass1" class="col-sm-6" required>
+					<br><br>
 
-					Confirm Password				
-					<input type="password" id="pass2" onkeyup="checkPass(); return false;" class="span6"><span id="confirmMessage" class="confirmMessage"></span>
-					<br>
+					Confirm Password<br>				
+					<input type="password" id="pass2" onkeyup="checkPass(); return false;" class="col-sm-6"><span id="confirmMessage" class="confirmMessage">
+					<br><br>
 
-					<span class="position"><button class="btn btn-primary">Submit</button></span>
+					<button class="btn btn-primary">Submit</button>
 				</form>
         	</div>
         </div>
 
-        <hr>
+        
         <div id="footer">
             <div class="container">
                 <p class="text-center text-muted credit">Banan hauling prototype website</p>
             </div>
         </div>
-	</body>
-	
-	<script src="js/jquery.js" type="text/javascript"></script>
-    <script src="js/bootstrap.js"></script>
-	<script type="text/javascript">
-		function checkPass()
-		{
-	    	var pass1 = document.getElementById('pass1');
-    		var pass2 = document.getElementById('pass2');
-		    var message = document.getElementById('confirmMessage');
-		    var goodColor = "#66cc66";
-		    var badColor = "#ff6666";
-		    if(pass1.value == pass2.value){
-		        //pass2.style.backgroundColor = goodColor;
-        		message.style.color = goodColor;
-        		message.innerHTML = "Passwords Match!"
-		    }else{
-		        //pass2.style.backgroundColor = badColor;
-		        message.style.color = badColor;
-		        message.innerHTML = "Passwords Do Not Match!"
-		    }
-		}
+		
+		<script src="js/jquery.js" type="text/javascript"></script>
+		<script src="js/bootstrap.js"></script>
+		<script type="text/javascript">
+			function checkPass()
+			{
+				var pass1 = document.getElementById('pass1');
+				var pass2 = document.getElementById('pass2');
+				var message = document.getElementById('confirmMessage');
+				var goodColor = "#66cc66";
+				var badColor = "#ff6666";
+				if(pass1.value == pass2.value){
+					//pass2.style.backgroundColor = goodColor;
+					message.style.color = goodColor;
+					message.innerHTML = "Passwords Match!"
+				}else{
+					//pass2.style.backgroundColor = badColor;
+					message.style.color = badColor;
+					message.innerHTML = "Passwords Do Not Match!"
+				}
+			}
 		</script>  
+	</body>
 </html>

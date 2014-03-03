@@ -77,27 +77,31 @@ require('banan_dbcon.php');
         </div>
 
   		<div class="wrap">  <!--Body-->
-            <div class="center wellspan10 alert alert-info" style="height:220px;width:710px" id="servicessView">
+            <div class="container center" id="servicessView">
                 <h3>Order</h3>
-    		    <form name="services" id="services" action="services.php" method="post">
-                    <span class="position">Item<span style="margin-left:60px"></span>
-                    <input type="text" class="span8" name="req_item">
-                    <br>
-                    <span class="position">Weight<span style="margin-left:43px"></span>
-                    <input type="text" class="span8" name="req_weight">
-                    <br>
-                    <span class="position">Pick-up point<span style="margin-left:5px"></span>
-                    <input type="text" class="span8" name="req_pick_up">
-                    <br>
-                    <span class="position">Destination<span style="margin-left:16px"></span>
-                    <input type="text" class="span8" name="req_drop_off">
-                    <br>
-                    <span class="position"><button class="btn btn-primary">Submit</button></span>   
+    		    <form class="form-horizontal" name="services" id="services" action="services.php" method="post">
+                    Item<br>
+                    <input type="text" class="col-sm-12" name="req_item" required>
+                    <br><br>
+					
+                    Weight<br>
+                    <input type="text" class="col-sm-12" name="req_weight" required>
+                    <br><br>
+					
+                    Pick-up point<br>
+                    <input type="text" class="col-sm-12" name="req_pick_up" required>
+                    <br><br>
+					
+                    Destination<br>
+                    <input type="text" class="col-sm-12" name="req_drop_off" required>
+                    <br><br>
+					
+                    <button class="btn btn-primary">Submit</button>
                 </form>
             </div>
         </div>
 
-        <hr>
+        
         <div id="footer">
             <div class="container">
                 <p class="text-center text-muted credit">Banan hauling prototype website</p>

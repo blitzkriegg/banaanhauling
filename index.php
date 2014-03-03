@@ -128,7 +128,7 @@ session_start();
         </div>       
         
 
-        <hr>
+      
         <div id="footer">
             <div class="container">
                 <p class="text-center text-muted credit">Banan hauling prototype website</p>

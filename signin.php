@@ -8,13 +8,14 @@ if(isset($_SESSION['UserID']) && isset($_SESSION['Username'])){
 	<head>
 
         <link type="text/css" rel="stylesheet" href="css/bootstrap.css">
+		<link href="css/signin.css" rel="stylesheet">
         <link href="css/sticky-footer.css" rel="stylesheet">
 		<style>
 			.center {
      			float: none;
      			margin-left: auto;
      			margin-right: auto;
-     			margin-top: 100;
+     			margin-top: 50;
      		}
 		</style>
 	</head>
@@ -66,34 +67,38 @@ if(isset($_SESSION['UserID']) && isset($_SESSION['Username'])){
         </div>
 
         <div class="wrap">  <!--Body-->
-            <div class="center well span4 alert alert-info" style="height:90px; top:20%;" id="signinViewCust">
-                <form name="signincust" id="signincust" action="customerLogin.php" method="post">
-                    email<input style="margin-left:28px" name="Email" type="text" style="padding-right:60px"/> <br/>
-                    Password<input type="password" name="Password" /> 
-                    <br>
-                    <input class="btn btn-primary" type="submit" name="login" id="login" value="Login">
-                </form>
-            </div>
+		
+			<div class="container form-signin center" id="signinViewEmp">
+				<form class="form-signin" name="signinemp"  name="signinemp" id="signinemp" action="employeeLogin.php" method="post">
+					<h2 class="form-signin-heading">Please sign in</h2>
+					<input type="text" class="form-control" placeholder="Email address" name="Username" required autofocus>
+					<input type="password" class="form-control" placeholder="Password" name="Password" required>
+					<br>
+					<input class="btn btn-lg btn-primary btn-block" type="submit" name="login" id="login" value="Login">
+				</form>
+			</div>
 
-            <div class="center well span4 alert alert-info" style="height:90px; top:20%;" id="signinViewEmp">
-                <form name="signinemp" id="signinemp" action="employeeLogin.php" method="post">
-                    ID<span style="margin-left:48px"></span><input  name="Username" type="text" style="padding-right:60px"/> <br/>
-                    Password<input type="password" name="Password"/> 
-                    <br>
-                    <input class="btn btn-primary" type="submit" name="login" id="login" value="Login">
-                </form>
-            </div>
+		
+			<div class="container form-signin center"  id="signinViewCust">
+				<form class="form-signin" name="signincust" id="signincust" action="customerLogin.php" method="post">
+					<h2 class="form-signin-heading">Please sign in</h2>
+					<input type="email" class="form-control" placeholder="Email address" name="Email" required autofocus>
+					<input type="password" class="form-control" placeholder="Password" name="Password" required>
+					<br>
+					<input class="btn btn-lg btn-primary btn-block" type="submit" name="login" id="login" value="Login">
+				</form>
+			</div>
+	
+			
+			
 
-            <div class="center well span3 text-center alert alert-info" id="choose">
+            <div class="container center text-center" id="choose">
                 <h3>Sign in as</h3>
                 <button class="btn btn-link" id="cost">Customer</button></span>|
                 <button class="btn btn-link" id="emp">Employee</button></span>
-            </div>
+            </div>		
         </div>
 		
-
-
-        <hr>
         <div id="footer">
             <div class="container">
                 <p class="text-center text-muted credit">Banan hauling prototype website</p>
